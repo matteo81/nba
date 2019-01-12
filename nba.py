@@ -200,7 +200,7 @@ def get_player(team_abbr, number):
 def print_boxscore(b):
     tabulate.PRESERVE_WHITESPACE = True
     outb = b[
-        ["PLAYER", "MIN", "FG", "FG3", "FT", "REB", "AST", "STL", "BLK", "TO", "PTS"]
+        ["PLAYER", "MIN", "FG", "FG3", "FT", "REB", "AST", "STL", "BLK", "TO", "PF", "PTS"]
     ]
     print(tabulate.tabulate(outb, headers="keys", showindex="never"))
     tabulate.PRESERVE_WHITESPACE = False
@@ -230,9 +230,9 @@ def boxscore(team_abbr):
     for field in ["FGM", "FGA", "FG3M", "FG3A", "FTM", "FTA"]:
         b[field] = b[field].fillna(0).astype(int)
 
-    b["FG"] = b["FGM"].map(str) + "-" + b["FGA"].map(str)
-    b["FG3"] = b["FG3M"].map(str) + "-" + b["FG3A"].map(str)
-    b["FT"] = b["FTM"].map(str) + "-" + b["FTA"].map(str)
+    b["FG"] = (b["FGM"].map(str) + "-" + b["FGA"].map(str)).str.pad(5)
+    b["FG3"] = (b["FG3M"].map(str) + "-" + b["FG3A"].map(str)).str.pad(5)
+    b["FT"] = (b["FTM"].map(str) + "-" + b["FTA"].map(str)).str.pad(5)
 
     for team_name, dataframe in b.groupby("TEAM_ABBREVIATION"):
         print(team_name)
