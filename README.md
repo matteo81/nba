@@ -92,3 +92,59 @@ SEASON    TEAM      PTS    REB    AST    STL    BLK    TOV    FG_PCT    FG3_PCT 
 2017-18   CLE      27.5    8.6    9.1    1.4    0.9    4.2     0.542      0.367     0.731   36.9
 2018-19   LAL      27.3    8.3    7.1    1.3    0.7    3.4     0.518      0.356     0.682   34.7
 ```
+
+##### Team
+This command displays the roster of the specified team, along with
+basic player information. For example:
+```
+nba team lal
+```
+shows
+```
+  NUM  PLAYER                    POSITION      AGE  HEIGHT      WEIGHT_KG  EXP
+-----  ------------------------  ----------  -----  --------  -----------  -----
+    0  Kyle Kuzma                F              23  6-9               100  1
+    1  Kentavious Caldwell-Pope  G              25  6-5                93  5
+    2  Lonzo Ball                G              21  6-6                86  1
+    3  Josh Hart                 G              23  6-5                98  1
+    4  Alex Caruso               G              24  6-5                84  1
+    5  Tyson Chandler            C              36  7-1               109  17
+    6  Lance Stephenson          G              28  6-6               104  8
+    7  JaVale McGee              C              30  7-0               122  10
+    9  Rajon Rondo               G              32  6-1                84  12
+   10  Svi Mykhailiuk            G              21  6-8                93  R
+   11  Michael Beasley           F              30  6-9               107  10
+   14  Brandon Ingram            F              21  6-9                86  2
+   15  Moritz Wagner             C              21  6-11              111  R
+   17  Isaac Bonga               G              19  6-8                82  R
+   19  Johnathan Williams        F              23  6-9               103  R
+   23  LeBron James              F              34  6-8               113  15
+   40  Ivica Zubac               C              21  7-1               109  2
+```
+You can optionally add the flag `-s` (or `--stats`) to show stats of
+the players. For example
+```
+nba team lal -s
+```
+shows
+```
+PLAYER_NAME                 GP    MIN  SCORING      PTS    REB    AST    TOV    STL    BLK
+------------------------  ----  -----  ---------  -----  -----  -----  -----  -----  -----
+LeBron James                34   34.7  52/36/68    27.3    8.3    7.1    3.4    1.3    0.7
+Kyle Kuzma                  41   32.7  46/30/77    18.6    5.8    2.4    1.9    0.6    0.4
+Brandon Ingram              32   32.0  46/30/62    16.3    4.8    2.6    2.5    0.6    0.7
+Lonzo Ball                  43   30.0  40/33/41     9.5    5.2    5.1    2.2    1.5    0.4
+Josh Hart                   43   27.2  42/36/68     9.3    4.0    1.4    0.9    1.1    0.6
+Rajon Rondo                 14   24.3  45/36/62     8.4    4.4    6.7    2.1    1.0    0.0
+Kentavious Caldwell-Pope    43   23.2  43/36/88    10.1    2.7    1.1    0.6    0.8    0.1
+JaVale McGee                36   23.1  60/17/66    11.3    6.9    0.8    1.6    0.7    2.3
+Tyson Chandler              31   19.4  60/0/65      3.8    6.9    0.8    0.8    0.5    0.5
+Lance Stephenson            42   15.3  45/37/64     7.2    3.0    2.0    1.2    0.6    0.1
+Ivica Zubac                 22   13.2  56/0/89      6.5    4.2    0.7    0.7    0.2    0.8
+Johnathan Williams           7   12.8  55/0/20      3.3    3.0    0.6    0.3    0.1    0.6
+Michael Beasley             15    9.9  56/25/71     7.3    1.9    0.7    1.0    0.3    0.3
+Svi Mykhailiuk              29    9.8  34/33/53     2.9    0.6    0.8    0.6    0.3    0.0
+Moritz Wagner               13    6.7  37/35/67     3.5    1.7    0.5    0.5    0.2    0.1
+Isaac Bonga                  6    3.6  25/0/67      1.0    0.7    0.7    0.3    0.5    0.0
+Alex Caruso                  2    2.6  0/0/0        0.0    0.5    0.0    0.0    0.0    0.0
+```
