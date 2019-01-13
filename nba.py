@@ -37,9 +37,9 @@ def get_players():
     pass
 
 
-@cli.command("team")
+@cli.command("team", help="Show team details.")
 @click.argument("team_abbr")
-@click.option("--stats/--no-stats", default=False)
+@click.option("--stats", "-s", is_flag=True, default=False, help="Show team stats")
 def team(team_abbr, stats):
     try:
         if stats:
