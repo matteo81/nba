@@ -20,6 +20,38 @@ This command lets you visualize the last boxscore of the specified team
 ```
 nba boxscore lal
 ```
+An example is shown below:
+```
+LAL
+PLAYER                    MIN    FG     FG3    FT       REB    AST    STL    BLK    TO    PF    PTS
+------------------------  -----  -----  -----  -----  -----  -----  -----  -----  ----  ----  -----
+Brandon Ingram            34:46   6-11    1-1    2-6      5      0      0      1     3     0     15
+Kyle Kuzma                36:17   4-18    0-5    3-4      8      1      1      0     1     0     11
+JaVale McGee              15:55    2-8    0-1    0-0      8      1      0      2     1     2      4
+Josh Hart                 29:31    2-6    1-4    1-2      5      1      0      0     2     6      6
+Lonzo Ball                31:14   3-13    1-5    0-0      7      6      2      0     1     5      7
+Tyson Chandler            05:19    1-1    0-0    0-0      3      1      0      0     0     1      2
+Kentavious Caldwell-Pope  26:41   5-13    1-4    1-2      5      0      1      0     2     2     12
+Michael Beasley           17:43   6-15    0-3    5-6      3      1      2      1     1     3     17
+Lance Stephenson          14:10    2-3    1-2    0-0      3      1      2      0     0     1      5
+Ivica Zubac               14:03   4-10    0-0    2-2      5      1      0      1     0     3     10
+Moritz Wagner             07:45    2-4    0-1    2-2      3      0      1      0     0     0      6
+Svi Mykhailiuk            06:36    0-1    0-1    0-0      0      1      0      0     1     0      0
+UTA
+PLAYER                    MIN    FG     FG3    FT       REB    AST    STL    BLK    TO    PF    PTS
+------------------------  -----  -----  -----  -----  -----  -----  -----  -----  ----  ----  -----
+Joe Ingles                31:03   5-11    2-5    2-2     12      4      1      0     3     1     14
+Derrick Favors            25:43   4-10    0-2    7-9     13      1      0      1     0     1     15
+Rudy Gobert               31:39   4-10    0-0    4-8     18      2      2      2     2     4     12
+Royce O'Neale             39:38   5-13   5-12    2-2      7      1      2      0     2     4     17
+Donovan Mitchell          32:53  14-24    4-5    1-2      4      9      1      2     3     3     33
+Jae Crowder               28:32   2-11    1-5    3-6      8      2      1      2     2     2      8
+Kyle Korver               20:55    2-7    2-6    3-3      2      2      0      1     2     2      9
+Georges Niang             20:34    1-8    1-6    0-0      0      2      2      1     1     3      3
+Naz Mitrou-Long           03:01    1-1    0-0    0-0      0      0      0      0     1     0      2
+Ekpe Udoh                 03:01    0-0    0-0    0-0      0      1      0      0     0     0      0
+Tyler Cavanaugh           03:01    0-1    0-1    0-0      1      0      0      0     0     0      0
+```
 
 ##### Player
 This command fetches career stats of the specified player. A player can
@@ -31,7 +63,7 @@ or by full name
 ```
 nba player 'lebron james'
 ```
-Either way, the application show career stats like:
+Either way, the application will show career stats like:
 ```
       Name: LeBron James
     Height: 6-8
