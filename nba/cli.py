@@ -8,6 +8,7 @@ from nba.commands.boxscore import print_boxscore
 from nba.commands.team import print_team, print_team_stats
 from nba.commands.player import print_player_info
 from nba.commands.common import get_roster
+from nba_api.stats.static import players
 from json.decoder import JSONDecodeError
 
 
@@ -37,23 +38,35 @@ def team(team_abbr, stats):
         exit(0)
 
 
-@cli.command("player")
+@cli.command("number")
 @click.argument("team_abbr")
-@click.argument("number", required=False)
+@click.argument("number")
 def get_player(team_abbr, number):
-    if not number:
-        try:
-            return print_team(team_abbr)
-        except TypeError:
-            player = players.find_players_by_full_name(team_abbr)[0]
-            return print_player_info(player["id"])
-
     try:
         p = get_roster(team_abbr)
         player = p[p.NUM == number]
         return print_player_info(player.PLAYER_ID)
     except JSONDecodeError:
         print("Player number not found!")
+
+
+@cli.command("player")
+@click.argument("name")
+def get_player_name(name):
+    hits = sorted(players.find_players_by_full_name(name), key=lambda r: r["id"], reverse=True)
+
+    if len(hits) == 1:
+        idx = 0
+    else:
+        print('Search hits:')
+        for i, h in enumerate(hits):
+            print(f"{i}: {h['full_name']} (id: {h['id']})")
+
+        sel = input('>>> Select player [0]: ')
+        idx = int(sel) if sel else 0
+        print("")
+        
+    return print_player_info(hits[idx]["id"])
 
 
 def main():
