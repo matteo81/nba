@@ -55,9 +55,9 @@ Tyler Cavanaugh           03:01    0-1    0-1    0-0      1      0      0      0
 
 ##### Player
 This command fetches career stats of the specified player. A player can
-be specified either by team and jersey number
+be specified either by team and jersey number, using the `number` command
 ```
-nba player lal 23
+nba number lal 23
 ```
 or by full name
 ```
