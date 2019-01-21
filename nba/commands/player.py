@@ -38,6 +38,8 @@ def print_player_info(player_id):
         [
             "SEASON_ID",
             "TEAM_ABBREVIATION",
+            "GP",
+            "MIN",
             "PTS",
             "REB",
             "AST",
@@ -46,8 +48,7 @@ def print_player_info(player_id):
             "TOV",
             "FG_PCT",
             "FG3_PCT",
-            "FT_PCT",
-            "MIN",
+            "FT_PCT"
         ]
     ]
     print(
@@ -56,6 +57,8 @@ def print_player_info(player_id):
             headers=[
                 "SEASON",
                 "TEAM",
+                "GP",
+                "MIN",
                 "PTS",
                 "REB",
                 "AST",
@@ -64,11 +67,12 @@ def print_player_info(player_id):
                 "TOV",
                 "FG_PCT",
                 "FG3_PCT",
-                "FT_PCT",
-                "MIN",
+                "FT_PCT"
             ],
             showindex="never",
             floatfmt=(
+                ".1f",
+                ".1f",
                 ".1f",
                 ".1f",
                 ".1f",

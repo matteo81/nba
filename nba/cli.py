@@ -65,7 +65,7 @@ def get_player_name(name):
         sel = input('>>> Select player [0]: ')
         idx = int(sel) if sel else 0
         print("")
-        
+
     return print_player_info(hits[idx]["id"])
 
 
